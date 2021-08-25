@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
 	return (
@@ -8,7 +9,17 @@ export default function Home() {
 				<meta name="keywords" content="Moa Hamner - sound design" />
 			</Head>
 			<div className="landing-page">
-				<h1> Moa</h1>
+				<h1 className="hero-text"> Moa</h1>
+				<h4>Sound designer</h4>
+				<div className="background-image">
+					<Image
+						src="/bakgrund_color.png"
+						alt="hej"
+						width={1300}
+						height={900}
+						// layout="fill"
+					/>
+				</div>
 			</div>
 		</>
 	);

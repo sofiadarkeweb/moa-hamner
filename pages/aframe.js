@@ -3,7 +3,7 @@ import Aframe from "../components/Aframecomp";
 
 const aframe = () => {
 	return (
-		<div>
+		<div className="aframe-scene">
 			<Aframe />
 		</div>
 	);

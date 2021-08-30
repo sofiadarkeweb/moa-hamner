@@ -7,7 +7,7 @@ export default class extends React.Component {
 		super(props);
 		this.state = {
 			appRendered: false,
-			color: "red",
+			color: "orange",
 		};
 	}
 
@@ -20,7 +20,7 @@ export default class extends React.Component {
 	}
 
 	changeColor() {
-		const colors = ["red", "orange", "yellow", "green", "blue"];
+		const colors = ["yellow", "orange", "yellow", "salmon", "blue"];
 		this.setState({
 			color: colors[Math.floor(Math.random() * colors.length)],
 		});
@@ -32,101 +32,101 @@ export default class extends React.Component {
 				<Head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<title>A-Frame React Boilerplate</title>
+					<title>A-Frame React</title>
 				</Head>
 
 				{this.state.appRendered && (
-					<Scene>
-						<a-assets>
-							<img
-								id="groundTexture"
-								src="https://cdn.aframe.io/a-painter/images/floor.jpg"
-							/>
-							<img
-								id="skyTexture"
-								src="https://cdn.aframe.io/a-painter/images/sky.jpg"
-							/>
-						</a-assets>
+					<div>
+						<Scene shadow="type: pcfsoft">
+							{/* <Entity>
+								<a-animation
+									attribute="position"
+									from="1 1 1"
+									to="2 4 -8"
+								></a-animation>
+							</Entity> */}
 
-						<Entity
-							primitive="a-plane"
-							src="#groundTexture"
-							rotation="-90 0 0"
-							height="100"
-							width="100"
-						/>
-						<Entity primitive="a-light" type="ambient" color="#445451" />
-						<Entity
-							primitive="a-light"
-							type="point"
-							intensity="2"
-							position="2 4 4"
-						/>
-						<Entity
-							primitive="a-sky"
-							height="2048"
-							radius="30"
-							src="#skyTexture"
-							theta-length="90"
-							width="2048"
-						/>
-						<Entity particle-system={{ preset: "snow", particleCount: 2000 }} />
-						<Entity
-							text={{ value: "Hello Moa", align: "center" }}
-							position={{ x: 0, y: 2, z: -1 }}
-						/>
+							{/* <a-dodecahedron color="#FF926B" radius="1"></a-dodecahedron> */}
+							{/* <a-tetrahedron
+								color="#FF926B"
+								radius="1"
+								animation_position
+							></a-tetrahedron> */}
 
-						<Entity
-							id="box"
-							geometry={{ primitive: "box" }}
-							material={{ color: this.state.color, opacity: 0.6 }}
-							animation__rotate={{
-								property: "rotation",
-								dur: 2000,
-								loop: true,
-								to: "360 360 360",
-							}}
-							animation__scale={{
-								property: "scale",
-								dir: "alternate",
-								dur: 100,
-								loop: true,
-								to: "1.1 1.1 1.1",
-							}}
-							position={{ x: 0, y: 1, z: -3 }}
-							events={{ click: this.changeColor.bind(this) }}
-						>
+							<Entity primitive="a-light" type="ambient" color="#445451" />
 							<Entity
-								animation__scale={{
-									property: "scale",
-									dir: "alternate",
-									dur: 100,
+								primitive="a-light"
+								type="point"
+								intensity="1"
+								position="2 4 4"
+							/>
+
+							{/* <Entity
+								particle-system={{ preset: "snow", particleCount: 2000 }}
+							/> */}
+							<Entity
+								text={{ value: "Moa", align: "center" }}
+								position={{ x: 0, y: 2, z: -1 }}
+							/>
+
+							<Entity
+								id="box"
+								geometry={{ primitive: "tetrahedron" }}
+								material={{ color: this.state.color, opacity: 0.7 }}
+								animation__rotate={{
+									property: "rotation",
+									dur: 30000,
 									loop: true,
-									to: "2 2 2",
+									to: "360 360 360",
+									easing: "linear",
 								}}
-								geometry={{
-									primitive: "box",
-									depth: 0.2,
-									height: 0.2,
-									width: 0.2,
-								}}
-								material={{ color: "#24CAFF" }}
-							/>
-						</Entity>
-
-						<Entity primitive="a-camera">
+								position={{ x: 0, y: 2, z: -0.8 }}
+								events={{ click: this.changeColor.bind(this) }}
+							></Entity>
 							<Entity
-								primitive="a-cursor"
-								animation__click={{
-									property: "scale",
-									startEvents: "click",
-									from: "0.1 0.1 0.1",
-									to: "1 1 1",
-									dur: 150,
+								id="box"
+								geometry={{ primitive: "box" }}
+								material={{ color: "aqua", opacity: 0.7 }}
+								animation__rotate={{
+									property: "rotation",
+									dur: 30000,
+									loop: true,
+									to: "360 360 360",
+									easing: "linear",
 								}}
+								position={{ x: -1, y: 2, z: -0.5 }}
+								events={{ click: this.changeColor.bind(this) }}
+							></Entity>
+
+							<Entity primitive="a-camera">
+								<Entity
+									primitive="a-cursor"
+									animation__click={{
+										property: "scale",
+										startEvents: "click",
+										from: "0.1 0.1 0.1",
+										to: "1 1 1",
+										dur: 150,
+									}}
+								/>
+							</Entity>
+
+							<Entity
+								geometry={{ primitive: "dodecahedron" }}
+								material={{ color: "orange", opacity: 0.7 }}
+								position={{ x: 0.5, y: 1, z: -2 }}
+								animation__rotate={{
+									property: "rotation",
+									dur: 20000,
+									loop: true,
+									to: "360 360 360",
+								}}
+								events={{ click: this.changeColor.bind(this) }}
 							/>
-						</Entity>
-					</Scene>
+							<Entity particle-system={{ preset: "snow" }} />
+							<Entity light={{ type: "point" }} />
+						</Scene>
+					</div>
 				)}
 			</div>
 		);

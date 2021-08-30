@@ -9,8 +9,8 @@ export default function Home() {
 				<meta name="keywords" content="Moa Hamner - sound design" />
 			</Head>
 			<div className="landing-page">
-				<h1 className="hero-text"> Moa</h1>
-				<h4>Sound designer</h4>
+				<h1 className="hero-text">Moa</h1>
+				<h2>Sound designer</h2>
 				<div className="background-image">
 					<Image
 						src="/bakgrund_color.png"

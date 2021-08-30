@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Layout({ children }) {
 	return (
 		<div className="layout">
-			<header>
+			<nav>
 				<Link href="/">
 					<a>
 						<p>home</p>
@@ -19,7 +19,12 @@ export default function Layout({ children }) {
 						<p>projects</p>
 					</a>
 				</Link>
-			</header>
+				<Link href="/aframe">
+					<a>
+						<p>aframe</p>
+					</a>
+				</Link>
+			</nav>
 
 			<div className="page-content">{children}</div>
 

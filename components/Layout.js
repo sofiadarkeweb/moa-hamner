@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 export default function Layout({ children }) {
+	let thisYear = new Date().getFullYear();
 	return (
 		<div className="layout">
 			<nav>
 				<Link href="/">
 					<a>
-						<p>home</p>
+						<p>start</p>
 					</a>
 				</Link>
 				<Link href="/about">
@@ -19,17 +20,12 @@ export default function Layout({ children }) {
 						<p>projects</p>
 					</a>
 				</Link>
-				<Link href="/aframe">
-					<a>
-						<p>aframe</p>
-					</a>
-				</Link>
 			</nav>
 
 			<div className="page-content">{children}</div>
 
 			<footer>
-				<p>Copyright 2021 Moa Hamner</p>
+				<p>Copyright {thisYear} Moa Hamner</p>
 			</footer>
 		</div>
 	);

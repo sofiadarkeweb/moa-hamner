@@ -7,7 +7,7 @@ export default class extends React.Component {
 		super(props);
 		this.state = {
 			appRendered: false,
-			color: "orange",
+			color: "#FFC903",
 		};
 	}
 
@@ -20,7 +20,7 @@ export default class extends React.Component {
 	}
 
 	changeColor() {
-		const colors = ["yellow", "orange", "yellow", "salmon", "blue"];
+		const colors = ["#FF7733", "#FF9C03", "#203B90", "blue"];
 		this.setState({
 			color: colors[Math.floor(Math.random() * colors.length)],
 		});
@@ -53,7 +53,7 @@ export default class extends React.Component {
 								animation_position
 							></a-tetrahedron> */}
 
-							<Entity primitive="a-light" type="ambient" color="#445451" />
+							{/* <Entity primitive="a-light" type="ambient" color="#445451" /> */}
 							<Entity
 								primitive="a-light"
 								type="point"
@@ -64,18 +64,19 @@ export default class extends React.Component {
 							{/* <Entity
 								particle-system={{ preset: "snow", particleCount: 2000 }}
 							/> */}
-							<Entity
+							{/* <Entity
 								text={{ value: "Moa", align: "center" }}
 								position={{ x: 0, y: 2, z: -1 }}
-							/>
+							/> */
+							/*tetrahedron*/}
 
 							<Entity
 								id="box"
 								geometry={{ primitive: "tetrahedron" }}
-								material={{ color: this.state.color, opacity: 0.7 }}
+								material={{ color: this.state.color, opacity: 0.8 }}
 								animation__rotate={{
 									property: "rotation",
-									dur: 30000,
+									dur: 80000,
 									loop: true,
 									to: "360 360 360",
 									easing: "linear",
@@ -85,11 +86,11 @@ export default class extends React.Component {
 							></Entity>
 							<Entity
 								id="box"
-								geometry={{ primitive: "box" }}
-								material={{ color: "aqua", opacity: 0.7 }}
+								geometry={{ primitive: "cone" }}
+								material={{ color: "aqua", opacity: 0.8 }}
 								animation__rotate={{
 									property: "rotation",
-									dur: 30000,
+									dur: 60000,
 									loop: true,
 									to: "360 360 360",
 									easing: "linear",
@@ -110,20 +111,32 @@ export default class extends React.Component {
 									}}
 								/>
 							</Entity>
-
+							{/* dodecahedron */}
 							<Entity
 								geometry={{ primitive: "dodecahedron" }}
-								material={{ color: "orange", opacity: 0.7 }}
+								material={{ color: "#002C91", opacity: 0.8 }}
 								position={{ x: 0.5, y: 1, z: -2 }}
 								animation__rotate={{
 									property: "rotation",
-									dur: 20000,
+									dur: 50000,
 									loop: true,
 									to: "360 360 360",
 								}}
 								events={{ click: this.changeColor.bind(this) }}
 							/>
-							<Entity particle-system={{ preset: "snow" }} />
+							<Entity
+								geometry={{ primitive: "cone" }}
+								material={{ color: this.state.color, opacity: 0.6 }}
+								position={{ x: 1, y: 1, z: -2 }}
+								animation__rotate={{
+									property: "rotation",
+									dur: 40000,
+									loop: true,
+									to: "360 360 360",
+								}}
+								// events={{ click: this.changeColor.bind(this) }}
+							/>
+							{/* <Entity particle-system={{ preset: "snow" }} /> */}
 							<Entity light={{ type: "point" }} />
 						</Scene>
 					</div>

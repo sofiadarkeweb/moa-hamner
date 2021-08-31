@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
+import Aframe from "../components/Aframecomp";
 
 export default function Home() {
 	return (
@@ -9,9 +10,22 @@ export default function Home() {
 				<meta name="keywords" content="Moa Hamner - sound design" />
 			</Head>
 			<div className="landing-page">
-				<h1 className="hero-text">Moa</h1>
-				<h2>Sound designer</h2>
-				<div className="background-image">
+				<div className="texture"></div>
+				<Link href="/about">
+					<a>
+						<h4>Sound designer</h4>{" "}
+					</a>
+				</Link>
+				<h1>
+					Moa
+					<br /> Hamner
+				</h1>
+
+				<div className="aframe-scene">
+					<Aframe />
+				</div>
+
+				{/* <div className="background-image">
 					<Image
 						src="/bakgrund_color.png"
 						alt="hej"
@@ -19,7 +33,7 @@ export default function Home() {
 						height={900}
 						// layout="fill"
 					/>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

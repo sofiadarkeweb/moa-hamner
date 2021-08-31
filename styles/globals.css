@@ -7,7 +7,7 @@
 }
 
 body {
-	background: black;
+	background-color: blanchedalmond;
 	color: white;
 
 	font-family: "Inknut Antiqua", serif;
@@ -24,21 +24,32 @@ body {
 nav {
 	z-index: 2000;
 	position: fixed;
+	width: 100vw;
+	display: flex;
+	/* border: 1px red solid; */
+	justify-content: center;
 }
 nav a {
 	text-decoration: none;
 	color: white;
 	display: inline-block;
 	margin: 0.5em;
+	font-size: 0.8em;
+	text-align: center;
 }
 
 footer {
 	/* background: black; */
 	color: #bbb;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 	margin-top: auto;
-	font-size: 0.8em;
+	font-size: 0.6em;
+	/* z-index: 3000; */
+	/* border: 2px green solid; */
+
+	/* bottom: 0; */
+	width: 100%;
 	/* position: fixed; */
 }
 .page-content {
@@ -48,47 +59,83 @@ footer {
 
 .about-text {
 	font-weight: 300;
-	font-size: 1.8em;
-	line-height: 1.4em;
+	font-size: 1.5em;
+	line-height: 1.3em;
+	position: absolute;
+	margin: 15%;
 }
 
 .landing-page {
 	position: relative;
 }
 .landing-page h1 {
+	color: rgb(6, 6, 91);
 	z-index: 1000;
+	mix-blend-mode: difference;
 	position: absolute;
+	display: flex;
+	/* opacity: 0.5; */
+	height: 90%;
 	width: 100%;
 	font-size: 10rem;
+	line-height: 9rem;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	border: 1px green solid;
+	pointer-events: none;
+	/* border: 3px green solid; */
 }
 
-.landing-page h2 {
+.landing-page h4 {
 	z-index: 1000;
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	border: 1px pink solid;
+
+	color: white;
+	/* border: 1px pink solid; */
 	line-height: 3rem;
 	margin-top: 40vh;
+	justify-content: center;
+	align-items: center;
+}
+.landing-page h4:hover {
+	color: rgb(223, 249, 255);
+	transform: scale(1.05);
+	transition: all 1s linear;
+	/* transition-delay: 0.4s; */
 }
 
 .aframe-scene {
-	background-color: blanchedalmond;
 	/* border: black 2px solid; */
 	width: 100vw;
-	height: 100vh;
+	height: 90vh;
 	filter: blur(40px);
 }
 
 .background-image {
-	width: 100%;
+	height: 100vh;
+	width: auto;
+
 	object-fit: cover;
 	overflow: hidden;
 	margin: 0;
-	filter: blur(10px);
-	border: lime 2px solid;
+	position: absolute;
+	/* border: lime 2px solid; */
+}
+
+.texture {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-image: url(/texture.png);
+	background-size: auto;
+	background-repeat: repeat;
+	mix-blend-mode: overlay;
+	opacity: 0.2;
+	border: 1px red solid;
+	z-index: 4000;
+	pointer-events: none;
 }
 
 .project-grid {
@@ -98,12 +145,13 @@ footer {
 
 .img-in-grid {
 	object-fit: cover;
-	/* overflow: hidden;  */
-	/* border: 2px red solid; */
-	width: 90%;
-	height: auto;
-	justify-content: center;
-	align-items: center;
+	overflow: hidden;
+	border: 2px red solid;
+	width: 100%;
+	height: 170px;
+
+	/* justify-content: center;
+	align-items: center; */
 }
 
 .img-in-grid:hover {
@@ -111,6 +159,26 @@ footer {
 }
 
 .about-section {
-	margin: 2rem;
-	padding-top: 7rem;
+	position: relative;
+	transition: all 1s ease-in-out;
+	/* transition-delay: 3s; */
+	animation-duration: 1s;
+	animation-name: example;
+	/* margin: 2rem;
+	padding-top: 7rem; */
+}
+
+@keyframes example {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
 }

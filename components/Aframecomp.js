@@ -23,6 +23,7 @@ export default class extends React.Component {
 		const colors = ["#FF7733", "#FF9C03", "#203B90", "blue"];
 		this.setState({
 			color: colors[Math.floor(Math.random() * colors.length)],
+			//sound:
 		});
 	}
 

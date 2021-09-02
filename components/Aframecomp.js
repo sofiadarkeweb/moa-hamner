@@ -14,7 +14,7 @@ export default class extends React.Component {
 	componentDidMount() {
 		if (typeof window !== "undefined") {
 			require("aframe");
-			require("aframe-particle-system-component");
+			// require("aframe-particle-system-component");
 			this.setState({ appRendered: true });
 		}
 	}
@@ -32,27 +32,12 @@ export default class extends React.Component {
 				<Head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<title>A-Frame React</title>
+					<title>A-Frame React animation</title>
 				</Head>
 
 				{this.state.appRendered && (
 					<div>
 						<Scene shadow="type: pcfsoft">
-							{/* <Entity>
-								<a-animation
-									attribute="position"
-									from="1 1 1"
-									to="2 4 -8"
-								></a-animation>
-							</Entity> */}
-
-							{/* <a-dodecahedron color="#FF926B" radius="1"></a-dodecahedron> */}
-							{/* <a-tetrahedron
-								color="#FF926B"
-								radius="1"
-								animation_position
-							></a-tetrahedron> */}
-
 							{/* <Entity primitive="a-light" type="ambient" color="#445451" /> */}
 							<Entity
 								primitive="a-light"
@@ -62,16 +47,13 @@ export default class extends React.Component {
 							/>
 
 							{/* <Entity
-								particle-system={{ preset: "snow", particleCount: 2000 }}
-							/> */}
-							{/* <Entity
 								text={{ value: "Moa", align: "center" }}
 								position={{ x: 0, y: 2, z: -1 }}
 							/> */
 							/*tetrahedron*/}
 
 							<Entity
-								id="box"
+								id="tetrahedron"
 								geometry={{ primitive: "tetrahedron" }}
 								material={{ color: this.state.color, opacity: 0.8 }}
 								animation__rotate={{
@@ -134,7 +116,7 @@ export default class extends React.Component {
 									loop: true,
 									to: "360 360 360",
 								}}
-								// events={{ click: this.changeColor.bind(this) }}
+								events={{ click: this.changeColor.bind(this) }}
 							/>
 							{/* <Entity particle-system={{ preset: "snow" }} /> */}
 							<Entity light={{ type: "point" }} />

@@ -15,9 +15,10 @@ const about = () => {
 					<Image
 						src="/about.png"
 						alt="hej"
-						width={1910}
-						height={1358}
-						// layout="fill"
+						// width={1910}
+						// height={1358}
+						objectFit="cover"
+						layout="fill"
 					/>
 				</div>
 				{/* <h1>about</h1> */}

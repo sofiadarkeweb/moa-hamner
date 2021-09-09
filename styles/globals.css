@@ -13,12 +13,12 @@ body {
 	margin-top: 0px;
 }
 
-.layout {
+/* .layout {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	position: relative;
-}
+} */
 
 nav {
 	z-index: 2000;
@@ -35,6 +35,7 @@ nav a {
 	margin: 0.5em;
 	font-size: 0.8em;
 	text-align: center;
+	cursor: url(/favicon.ico) 15 15, auto;
 }
 
 footer {
@@ -98,6 +99,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 }
+
 .landing-page h4:hover {
 	color: rgb(223, 249, 255);
 	transform: scale(1.05);
@@ -110,17 +112,6 @@ footer {
 	width: 100vw;
 	height: 90vh;
 	filter: blur(40px);
-}
-
-.background-image {
-	height: 100vh;
-	width: auto;
-
-	object-fit: cover;
-	overflow: hidden;
-	margin: 0;
-	position: absolute;
-	/* border: lime 2px solid; */
 }
 
 .texture {
@@ -169,7 +160,7 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	mix-blend-mode: overlay;
-	padding-bottom: -14px;
+	/* padding-bottom: -14px; */
 	/* margin: 2rem; */
 }
 
@@ -190,11 +181,16 @@ footer {
 .about-section {
 	position: relative;
 	transition: all 1s ease-in-out;
+	min-height: 100vh;
 	/* transition-delay: 3s; */
 	animation-duration: 1s;
 	animation-name: example;
 	/* margin: 2rem;
 	padding-top: 7rem; */
+}
+
+.background-image {
+	border: lime 2px solid;
 }
 
 @keyframes example {

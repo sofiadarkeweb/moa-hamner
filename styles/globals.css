@@ -202,8 +202,26 @@ footer {
 	}
 }
 
+@media screen and (max-width: 870px) {
+	.landing-page h1 {
+		font-size: 8rem;
+		line-height: 8rem;
+	}
+}
+@media screen and (max-width: 650px) {
+	.landing-page h1 {
+		font-size: 6rem;
+		line-height: 6rem;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.my-masonry-grid {
 		margin-right: -30px;
+	}
+
+	.landing-page h1 {
+		font-size: 4rem;
+		line-height: 4rem;
 	}
 }

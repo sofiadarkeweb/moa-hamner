@@ -14,13 +14,13 @@ export default class extends React.Component {
 	componentDidMount() {
 		if (typeof window !== "undefined") {
 			require("aframe");
-			// require("aframe-particle-system-component");
+			require("aframe-particle-system-component");
 			this.setState({ appRendered: true });
 		}
 	}
 
 	changeColor() {
-		const colors = ["#FF7733", "#FF9C03", "#203B90", "blue"];
+		const colors = ["#c8553d", "#2d6a4f", "#FFB703", "#FB8500"];
 		this.setState({
 			color: colors[Math.floor(Math.random() * colors.length)],
 			//sound:
@@ -33,13 +33,13 @@ export default class extends React.Component {
 				<Head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<title>A-Frame React animation</title>
+					{/* <title>A-Frame React animation</title> */}
 				</Head>
 
 				{this.state.appRendered && (
 					<div>
 						<Scene shadow="type: pcfsoft">
-							{/* <Entity primitive="a-light" type="ambient" color="#445451" /> */}
+							<Entity primitive="a-light" type="ambient" color="#F72585" />
 							<Entity
 								primitive="a-light"
 								type="point"
@@ -70,7 +70,7 @@ export default class extends React.Component {
 							<Entity
 								id="box"
 								geometry={{ primitive: "cone" }}
-								material={{ color: "aqua", opacity: 0.8 }}
+								material={{ color: "#FB8500", opacity: 0.8 }}
 								animation__rotate={{
 									property: "rotation",
 									dur: 60000,
@@ -97,7 +97,7 @@ export default class extends React.Component {
 							{/* dodecahedron */}
 							<Entity
 								geometry={{ primitive: "dodecahedron" }}
-								material={{ color: "#002C91", opacity: 0.8 }}
+								material={{ color: "#6a040f", opacity: 0.8 }}
 								position={{ x: 0.5, y: 1, z: -2 }}
 								animation__rotate={{
 									property: "rotation",
@@ -110,7 +110,7 @@ export default class extends React.Component {
 							<Entity
 								geometry={{ primitive: "cone" }}
 								material={{ color: this.state.color, opacity: 0.6 }}
-								position={{ x: 1, y: 1, z: -2 }}
+								position={{ x: 1, y: 1, z: -1 }}
 								animation__rotate={{
 									property: "rotation",
 									dur: 40000,

@@ -10,12 +10,13 @@ export default function Home() {
 				<meta name="keywords" content="Moa Hamner - sound design" />
 			</Head>
 			<div className="landing-page">
-				<div className="texture"></div>
 				<Link href="/about">
 					<a>
-						<h4>Sound designer</h4>{" "}
+						<h4>Sound designer</h4>
 					</a>
 				</Link>
+				<div className="texture"></div>
+
 				<h1>
 					Moa
 					<br /> Hamner

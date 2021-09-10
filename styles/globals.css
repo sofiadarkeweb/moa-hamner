@@ -50,7 +50,8 @@ footer {
 
 	/* bottom: 0; */
 	width: 100%;
-	/* position: fixed; */
+	position: absolute;
+	bottom: 0;
 }
 .page-content {
 	width: 100%;
@@ -69,7 +70,7 @@ footer {
 	position: relative;
 }
 .landing-page h1 {
-	color: rgb(6, 6, 91);
+	color: #370617;
 	z-index: 1000;
 	mix-blend-mode: difference;
 	position: absolute;
@@ -87,30 +88,30 @@ footer {
 }
 
 .landing-page h4 {
-	z-index: 1000;
+	z-index: 5000;
 	position: absolute;
 	text-align: center;
 	width: 100%;
 
 	color: white;
 	/* border: 1px pink solid; */
-	line-height: 3rem;
-	margin-top: 40vh;
+	/* line-height: 3rem; */
+	margin-top: 45vh;
 	justify-content: center;
 	align-items: center;
 }
 
 .landing-page h4:hover {
-	color: rgb(223, 249, 255);
-	transform: scale(1.05);
+	/* transform: scale(1.05); */
 	transition: all 1s linear;
-	/* transition-delay: 0.4s; */
+	color: rgb(254, 60, 92);
+	transition-delay: 0.4s;
 }
 
 .aframe-scene {
 	/* border: black 2px solid; */
 	width: 100vw;
-	height: 90vh;
+	height: 100vh;
 	filter: blur(40px);
 }
 
@@ -124,7 +125,7 @@ footer {
 	mix-blend-mode: overlay;
 	opacity: 0.2;
 	/* border: 1px red solid; */
-	z-index: 4000;
+	z-index: 1000;
 	pointer-events: none;
 }
 

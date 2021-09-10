@@ -181,28 +181,21 @@ footer {
 
 .about-section {
 	position: relative;
-	transition: all 1s ease-in-out;
+
 	min-height: 100vh;
 	/* transition-delay: 3s; */
-	animation-duration: 1s;
-	animation-name: example;
+
 	/* margin: 2rem;
 	padding-top: 7rem; */
 }
 
 .background-image {
-	border: lime 2px solid;
+	animation: 1s ease-out 0s 1 fadeIn;
 }
 
-@keyframes example {
+@keyframes fadeIn {
 	0% {
 		opacity: 0;
-	}
-	25% {
-		opacity: 0.25;
-	}
-	50% {
-		opacity: 0.5;
 	}
 	100% {
 		opacity: 1;

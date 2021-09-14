@@ -1,16 +1,29 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+// import SoundTone from "../components/SoundTone";
+
+// import * as Tone from "tone";
+
+// const synth = new Tone.MembraneSynth().toMaster();
+
+// function playSynth() {
+// 	synth.TriggerAttackRelease("C2", "8n");
+// }
 
 const about = () => {
+	// const handleClick = () => {
+	// 	console.log("Click happened");
+	// };
 	return (
 		<>
 			<Head>
 				<title> Moa Hamner | About</title>
 				<meta name="keywords" content="Moa Hamner - about and contact" />
 			</Head>
-
+			{/* <SoundTone /> */}
 			<div className="about-section">
+				{/* <button onClick={handleClick}>click</button> */}
 				<div className="background-image">
 					<Image
 						src="/about.png"

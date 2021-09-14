@@ -1,6 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import { Entity, Scene } from "aframe-react";
+import * as Tone from "tone";
+
+// const synth = new Tone.Synth().toDestination();
+
+// function playSynth() {
+// 	synth.TriggerAttackRelease("C2", "8n");
+// }
 
 export default class extends React.Component {
 	constructor(props) {
@@ -23,7 +30,8 @@ export default class extends React.Component {
 		const colors = ["#c8553d", "#2d6a4f", "#FFB703", "#FB8500"];
 		this.setState({
 			color: colors[Math.floor(Math.random() * colors.length)],
-			//sound:
+
+			// sound: { playSynth },
 		});
 	}
 
